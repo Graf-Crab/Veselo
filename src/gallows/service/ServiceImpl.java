@@ -68,7 +68,71 @@ public class ServiceImpl implements Service {
     public void badEnd() {
         System.out.println("\n=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=\nYou LOSEEE\n=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=");
         System.out.println("ahahaha");
+    }
 
+    @Override
+    public void drawGallows(int number) {
+
+        //1%
+         double progressBar = (double)100 / 9;
+
+
+        double progressWrong = progressBar * (double) number;
+
+        if (progressWrong <=  13.0){
+                System.out.println(" ----------");
+                System.out.println(" |        |");
+                System.out.println(" |        ");
+                System.out.println(" |        ");
+                System.out.println(" |        ");
+                System.out.println("_|_       ");
+        } else if (progressWrong <=  26.0) {
+            System.out.println(" ----------");
+            System.out.println(" |        |");
+            System.out.println(" |        0");
+            System.out.println(" |        ");
+            System.out.println(" |        ");
+            System.out.println("_|_       ");
+            
+        } else if (progressWrong <=  39.0) {
+            System.out.println(" ----------");
+            System.out.println(" |        |");
+            System.out.println(" |        0");
+            System.out.println(" |        |");
+            System.out.println(" |        ");
+            System.out.println("_|_       ");
+
+        } else if (progressWrong <=  52.0) {
+            System.out.println(" ----------");
+            System.out.println(" |        |");
+            System.out.println(" |        0");
+            System.out.println(" |       \\|");
+            System.out.println(" |        ");
+            System.out.println("_|_       ");
+        }else if (progressWrong <=  65.0) {
+            System.out.println(" ----------");
+            System.out.println(" |        |");
+            System.out.println(" |        0");
+            System.out.println(" |       \\|/");
+            System.out.println(" |        ");
+            System.out.println("_|_       ");
+        }
+        else if (progressWrong <=  78.0) {
+            System.out.println(" ----------");
+            System.out.println(" |        |");
+            System.out.println(" |        0");
+            System.out.println(" |       \\|/");
+            System.out.println(" |       /");
+            System.out.println("_|_       ");
+        }
+        else if (progressWrong <=  92.0) {
+            System.out.println(" ----------");
+            System.out.println(" |        |");
+            System.out.println(" |      |0_0|.....HeeeeeeT!!");
+            System.out.println(" |      \\|/");
+            System.out.println(" |      / \\");
+            System.out.println("_|_       ");
+        }
     }
 
 

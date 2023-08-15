@@ -12,20 +12,28 @@ public class Main {
 
    public static String testWord;
    public static  int countToWin = 0;
+    public static  int countWord = 9;
+
+    public static int countWrongs;
 
    public static StringBuilder listWithWrongs = new StringBuilder();
     //public static List<String> listWithWrongs = new ArrayList<>();
 
     public static void main(String[] args) {
-        testWord = "nootebook";
 
         Service service = new ServiceImpl();
-
         Word sampleWord = new Word();
+
+        testWord = "nootebook";
+
+        countWord = sampleWord.getCount();
+        countWrongs = 0;
+
+
 
         //Set field
 
-        int countWrongs = 0;
+
 
         int result = 0;
 
@@ -46,12 +54,17 @@ public class Main {
             //загаданное слово в виде _ _ _ _ _
             System.out.println(stringBuilder);
 
+
+
             String a = scanner.next();
+
+
 
             if (service.checkTry(a,sampleWord.getList())) {
 
                 service.rewrite(stringBuilder,sampleWord.getList(),a);
                 System.out.println(" Wrong (" +countWrongs+"):" + listWithWrongs);
+                service.drawGallows(countWrongs);
 
                 if((countToWin == sampleWord.getCount())){
                     ++result;
@@ -61,6 +74,7 @@ public class Main {
             } else {
                 ++countWrongs;
                 System.out.println(" Wrong (" +countWrongs+"):" + listWithWrongs);
+                service.drawGallows(countWrongs);
             }
         }
 

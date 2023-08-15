@@ -17,6 +17,8 @@ public interface Service {
      void happyEnd();
      void badEnd();
 
+     void drawGallows(int number);
+
 
 
 }
