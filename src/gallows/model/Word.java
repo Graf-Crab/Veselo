@@ -10,15 +10,17 @@ public class Word {
 
     private int count;
 
-    private StringBuilder sample;
+    private List<String> sample;
 
-    private List<Character> list;
+    private List<String> list;
 
-    public List<Character> getList() {
+    private StringBuilder listWithWrongs;
+
+    public List<String> getList() {
         return list;
     }
 
-    public void setList(List<Character> list) {
+    public void setList(List<String> list) {
         this.list = list;
     }
 
@@ -30,11 +32,11 @@ public class Word {
         this.count = count;
     }
 
-    public StringBuilder getSample() {
+    public List<String> getSample() {
         return sample;
     }
 
-    public void setSample(StringBuilder sample) {
+    public void setSample(List<String> sample) {
         this.sample = sample;
     }
 
@@ -52,5 +54,13 @@ public class Word {
 
     public void setCountWrongs(int countWrongs) {
         this.countWrongs = countWrongs;
+    }
+
+    public StringBuilder getListWithWrongs() {
+        return listWithWrongs;
+    }
+
+    public void setListWithWrongs(StringBuilder listWithWrongs) {
+        this.listWithWrongs = listWithWrongs;
     }
 }

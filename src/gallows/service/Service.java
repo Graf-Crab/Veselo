@@ -6,11 +6,17 @@ public interface Service {
 
      int getWordCount(String word);
 
-     StringBuilder createSample(int count);
+     List<String> createSample(int count);
 
      List splitWord(String word);
 
-     boolean checkTry(char userChar, List<Character> list);
+     boolean checkTry(String userChar, List<String> list);
+
+     List<String> rewrite(List<String> list1, List<String> list, String str);
+
+     void happyEnd();
+     void badEnd();
+
 
 
 }

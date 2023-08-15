@@ -5,7 +5,7 @@ package gallows.service;
 import java.util.ArrayList;
 import java.util.List;
 
-import static gallows.main.Main.testWord;
+import static gallows.main.Main.*;
 
 public class ServiceImpl implements Service {
 
@@ -15,11 +15,11 @@ public class ServiceImpl implements Service {
     }
 
     @Override
-    public StringBuilder createSample(int count) {
-        StringBuilder sample = new StringBuilder();
+    public List<String> createSample(int count) {
+        List<String> sample = new ArrayList<>();
 
-        for (int i = 0; i<getWordCount(testWord);i++){
-            sample.append("_ ");
+        for (int i = 0; i < getWordCount(testWord); i++) {
+            sample.add("_ ");
         }
         return sample;
     }
@@ -27,22 +27,49 @@ public class ServiceImpl implements Service {
     @Override
     public List splitWord(String word) {
         char[] chars = testWord.toCharArray();
-        List<Character> list = new ArrayList<>();
-        for (int i = 0; i<chars.length;i++){
-            list.add(chars[i]);
+        List<String> list = new ArrayList<>();
+        for (int i = 0; i < chars.length; i++) {
+            list.add(String.valueOf(chars[i]));
         }
         return list;
     }
 
     @Override
-    public boolean checkTry(char userChar, List<Character> list) {
+    public boolean checkTry(String userChar, List<String> list) {
 
-        if(list.contains(userChar)){
+        if (list.contains(userChar)) {
             return true;
+        } else {
+            //listWithWrongs.add(userChar);
+            listWithWrongs.append(userChar);
+            listWithWrongs.append(", ");
+            return false;
         }
-        return false;
     }
 
+    @Override
+    public List<String> rewrite(List<String> list1, List<String> list, String str) {
+
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).equals(str)) {
+                list1.set(i, str);
+                ++countToWin;
+            }
+        }
+        return list1;
+    }
+
+    @Override
+    public void happyEnd() {
+        System.out.println("\n=*=*=*=*=*=*=*=*=*=*=*=*=*=\nCongratulations!!!!\nYou WIN\n=*=*=*=*=*=*=*=*=*=*=*=*=*=");
+    }
+
+    @Override
+    public void badEnd() {
+        System.out.println("\n=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=\nYou LOSEEE\n=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=");
+        System.out.println("ahahaha");
+
+    }
 
 
 }
