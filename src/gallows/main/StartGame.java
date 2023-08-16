@@ -25,6 +25,7 @@ public class StartGame {
         4. Стрингбилдер для ошибок (отображает неудачные попытки)
         5. secretWord скрытое слово "_ _ _ _ _ _"
         6.Лист, в котром буквы через запятую. Для проверки
+
          */
 
         String randomWord = setupGame.randomHeroName;
