@@ -4,29 +4,32 @@ package gallows.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
-import static gallows.main.Main.*;
+import static gallows.main.StartGame.*;
 
 public class ServiceImpl implements Service {
 
+    Random random = new Random();
+
     @Override
-    public int getWordCount(String word) {
+    public int getRandomNameCount(String word) {
         return word.length();
     }
 
     @Override
-    public List<String> createSample(int count) {
+    public List<String> createSecretWord(int count) {
         List<String> sample = new ArrayList<>();
 
-        for (int i = 0; i < getWordCount(testWord); i++) {
+        for (int i = 0; i < count; i++) {
             sample.add("_ ");
         }
         return sample;
     }
 
     @Override
-    public List splitWord(String word) {
-        char[] chars = testWord.toCharArray();
+    public List splitName(String word) {
+        char[] chars = word.toCharArray();
         List<String> list = new ArrayList<>();
         for (int i = 0; i < chars.length; i++) {
             list.add(String.valueOf(chars[i]));
@@ -40,12 +43,17 @@ public class ServiceImpl implements Service {
         if (list.contains(userChar)) {
             return true;
         } else {
-            //listWithWrongs.add(userChar);
-            listWithWrongs.append(userChar);
-            listWithWrongs.append(", ");
+
             return false;
         }
     }
+
+    //append
+    public List<String> addWrong(String userChar, List<String> list){
+        list.add(userChar);
+        return list;
+    }
+
 
     @Override
     public List<String> rewrite(List<String> list1, List<String> list, String str) {
@@ -133,6 +141,13 @@ public class ServiceImpl implements Service {
             System.out.println(" |      / \\");
             System.out.println("_|_       ");
         }
+    }
+
+    @Override
+    public String getRandomName(List<String> list) {
+        int randomIndex = random.nextInt(list.size());
+        String randomWord = list.get(randomIndex);
+        return randomWord;
     }
 
 

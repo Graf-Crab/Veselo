@@ -4,11 +4,11 @@ import java.util.List;
 
 public interface Service {
 
-     int getWordCount(String word);
+     int getRandomNameCount(String word);
 
-     List<String> createSample(int count);
+     List<String> createSecretWord(int count);
 
-     List splitWord(String word);
+     List splitName(String word);
 
      boolean checkTry(String userChar, List<String> list);
 
@@ -18,6 +18,14 @@ public interface Service {
      void badEnd();
 
      void drawGallows(int number);
+
+     String getRandomName(List<String> list);
+
+     List<String> addWrong(String userChar, List<String> list);
+
+
+
+
 
 
 
