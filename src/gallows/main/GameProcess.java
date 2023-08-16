@@ -29,14 +29,11 @@ public class GameProcess {
 
     public void gameStart() {
         while (true) {
-
             while (countUserWrongs != maxCountErros) {
 
                 //загаданное слово в виде _ _ _ _ _
                 System.out.println(secretWord);
-
                 String a = scanner.next();
-
 
                 //Проверка, есть в слове буква, которую ввел пользователь
                 if (service.checkTry(a, checkList)) {
@@ -44,13 +41,11 @@ public class GameProcess {
                     //меня в скрытном слове "_" на букву пользователя
                     if (service.checkTry(a, secretWord)) {
                         System.out.println("You already entered it");
-
                     } else {
                         service.rewrite(secretWord, checkList, a);
                     }
 
                     System.out.println(" Wrong (" + countUserWrongs + "):" + userWrongs);
-
                     //Отрисовка висилицы
                     service.drawGallows(countUserWrongs);
 
@@ -71,15 +66,12 @@ public class GameProcess {
                     } else {
                         ++countUserWrongs;
                     }
-
                     //запись ошибочной буквы
                     service.addWrong(a, userWrongs);
                     System.out.println(" Wrong (" + countUserWrongs + "):" + userWrongs);
                     service.drawGallows(countUserWrongs);
                 }
             }
-
-            //Красивая победная надпись
             if (result == 0) {
                 service.badEnd();
                 System.err.println("It was: " + randomWord);
@@ -106,6 +98,5 @@ public class GameProcess {
                 break;
             }
         }
-
     }
 }
