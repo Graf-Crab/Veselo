@@ -19,12 +19,12 @@ public class StartGame {
         Scanner scanner = new Scanner(System.in);
 
         /*
-        1. Случайное слово
-        2. Колличество символов
-        3 Колличество ошибок (будет увеличивается)
-        4. Стрингбилдер для ошибок (отображает неудачные попытки)
-        5. secretWord скрытое слово "_ _ _ _ _ _"
-        6.Лист, в котром буквы через запятую. Для проверки
+        1. РЎР»СѓС‡Р°Р№РЅРѕРµ СЃР»РѕРІРѕ
+        2. РљРѕР»Р»РёС‡РµСЃС‚РІРѕ СЃРёРјРІРѕР»РѕРІ
+        3 РљРѕР»Р»РёС‡РµСЃС‚РІРѕ РѕС€РёР±РѕРє (Р±СѓРґРµС‚ СѓРІРµР»РёС‡РёРІР°РµС‚СЃСЏ)
+        4. РЎС‚СЂРёРЅРіР±РёР»РґРµСЂ РґР»СЏ РѕС€РёР±РѕРє (РѕС‚РѕР±СЂР°Р¶Р°РµС‚ РЅРµСѓРґР°С‡РЅС‹Рµ РїРѕРїС‹С‚РєРё)
+        5. secretWord СЃРєСЂС‹С‚РѕРµ СЃР»РѕРІРѕ "_ _ _ _ _ _"
+        6.Р›РёСЃС‚, РІ РєРѕС‚СЂРѕРј Р±СѓРєРІС‹ С‡РµСЂРµР· Р·Р°РїСЏС‚СѓСЋ. Р”Р»СЏ РїСЂРѕРІРµСЂРєРё
          */
 
         String randomWord = setupGame.randomHeroName;
@@ -49,16 +49,16 @@ public class StartGame {
 
             while (countUserWrongs != maxCountErros) {
 
-                //загаданное слово в виде _ _ _ _ _
+                //Р·Р°РіР°РґР°РЅРЅРѕРµ СЃР»РѕРІРѕ РІ РІРёРґРµ _ _ _ _ _
                 System.out.println(secretWord);
 
                 String a = scanner.next();
 
 
-                //Проверка, есть в слове буква, которую ввел пользователь
+                //РџСЂРѕРІРµСЂРєР°, РµСЃС‚СЊ РІ СЃР»РѕРІРµ Р±СѓРєРІР°, РєРѕС‚РѕСЂСѓСЋ РІРІРµР» РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ
                 if (service.checkTry(a, checkList)) {
 
-                    //меня в скрытном слове "_" на букву пользователя
+                    //РјРµРЅСЏ РІ СЃРєСЂС‹С‚РЅРѕРј СЃР»РѕРІРµ "_" РЅР° Р±СѓРєРІСѓ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
                     if (service.checkTry(a, secretWord)) {
                         System.out.println("You already entered it");
 
@@ -68,7 +68,7 @@ public class StartGame {
 
                     System.out.println(" Wrong (" + countUserWrongs + "):" + userWrongs);
 
-                    //Отрисовка висилицы
+                    //РћС‚СЂРёСЃРѕРІРєР° РІРёСЃРёР»РёС†С‹
                     service.drawGallows(countUserWrongs);
 
                     if (countToWin == countRandomWord) {
@@ -77,7 +77,7 @@ public class StartGame {
                         break;
                     }
                 } else {
-                    //проверка на запрещенные символы
+                    //РїСЂРѕРІРµСЂРєР° РЅР° Р·Р°РїСЂРµС‰РµРЅРЅС‹Рµ СЃРёРјРІРѕР»С‹
                     if (service.checkTry(a, dotaHeroes.forbiddenSymbols)) {
                         System.err.println("\n\tITS Forbidden Symbols!!");
                          continue;
@@ -88,14 +88,14 @@ public class StartGame {
                         ++countUserWrongs;
                     }
 
-                    //запись ошибочной буквы
+                    //Р·Р°РїРёСЃСЊ РѕС€РёР±РѕС‡РЅРѕР№ Р±СѓРєРІС‹
                     service.addWrong(a, userWrongs);
                     System.out.println(" Wrong (" + countUserWrongs + "):" + userWrongs);
                     service.drawGallows(countUserWrongs);
                 }
             }
 
-            //Красивая победная надпись
+            //РљСЂР°СЃРёРІР°СЏ РїРѕР±РµРґРЅР°СЏ РЅР°РґРїРёСЃСЊ
             if (result == 0) {
                 service.badEnd();
                 System.err.println("It was: " + randomWord);
