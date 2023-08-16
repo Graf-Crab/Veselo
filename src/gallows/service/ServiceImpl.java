@@ -3,6 +3,7 @@ package gallows.service;
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -29,11 +30,7 @@ public class ServiceImpl implements Service {
 
     @Override
     public List splitName(String word) {
-        char[] chars = word.toCharArray();
-        List<String> list = new ArrayList<>();
-        for (int i = 0; i < chars.length; i++) {
-            list.add(String.valueOf(chars[i]));
-        }
+        List<String> list = Arrays.asList(word.split(""));
         return list;
     }
 

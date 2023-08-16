@@ -16,12 +16,4 @@ public class DotaHeroes {
               "Io", "Visage", "Slark", "Medusa", "Magnus", "Timbersaw", "Bristleback", "Tusk", "Abaddon",
               "Techies", "Underlord", "Terrorblade", "Phoenix", "Oracle", "Pangolier", "Grimstroke", "Mars","Snapfire",
              "Hoodwink", "Dawnbreaker"));
-
-     public List<String> forbiddenSymbols = new ArrayList<>(Arrays.asList( "0","1","2","3","4","5","6","7","8","9",
-             "~","!","@","#","$","%","^","&","*","(", ")", "-", "+"));
-
-
-
-
-
 }

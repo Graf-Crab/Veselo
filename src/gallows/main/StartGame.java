@@ -6,6 +6,8 @@ import gallows.service.ServiceImpl;
 
 import java.util.List;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class StartGame {
 
@@ -17,6 +19,8 @@ public class StartGame {
         SetupGame setupGame = new SetupGame();
         DotaHeroes dotaHeroes = new DotaHeroes();
         Scanner scanner = new Scanner(System.in);
+
+
 
         /*
         1. Случайное слово
@@ -79,9 +83,10 @@ public class StartGame {
                     }
                 } else {
                     //проверка на запрещенные символы
-                    if (service.checkTry(a, dotaHeroes.forbiddenSymbols)) {
+                    if (!a.matches("[a-zA-Z]")) {
                         System.err.println("\n\tITS Forbidden Symbols!!");
                          continue;
+                        //проверка,что пользователь не повторят свою ошибку
                     } else if(userWrongs.indexOf(a) != -1) {
                         System.err.println("\n\tYou already entered it!!");
                         continue;
