@@ -20,7 +20,7 @@ public class SetupGame {
     7. Список ошибочных букв
      */
 
-     String randomHeroName = serviceManager.getRandomName(dotaHeroes.manyNames);
+     String randomHeroName = serviceManager.getRandomName(dotaHeroes.dotaHeroesNames);
      int randomHeroNameCount = serviceManager.getRandomNameCount(randomHeroName);
      List<String> secretWord = serviceManager.createSecretWord(randomHeroNameCount);
      List<String> checkList = serviceManager.splitName(randomHeroName);

@@ -6,7 +6,7 @@ import java.util.List;
 
 public class DotaHeroes {
 
-     public List<String> manyNames = new ArrayList<>(Arrays.asList("Anti-Mage", "Axe", "Bane", "Bloodseeker", "",
+     public List<String> dotaHeroesNames = new ArrayList<>(Arrays.asList("Anti-Mage", "Axe", "Bane", "Bloodseeker", "",
              "", "Earthshaker", "Juggernaut", "Mirana", "Morphling", "Puck", "Pudge", "Razor", "Sven", "Tiny",
              "Windranger", "Zeus", "Kunkka", "Lina", "Lion", "Slardar", "Tidehunter", "Lich", "Riki", "Enigma", "Tinker",
              "Sniper", "Necrophos", "Warlock", "Beastmaster", "Venomancer", "Void", "Pugna", "Viper", "Luna",
@@ -16,4 +16,12 @@ public class DotaHeroes {
               "Io", "Visage", "Slark", "Medusa", "Magnus", "Timbersaw", "Bristleback", "Tusk", "Abaddon",
               "Techies", "Underlord", "Terrorblade", "Phoenix", "Oracle", "Pangolier", "Grimstroke", "Mars","Snapfire",
              "Hoodwink", "Dawnbreaker"));
+
+     public List<String> forbiddenSymbols = new ArrayList<>(Arrays.asList( "0","1","2","3","4","5","6","7","8","9",
+             "~","!","@","#","$","%","^","&","*","(", ")", "-", "+"));
+
+
+
+
+
 }

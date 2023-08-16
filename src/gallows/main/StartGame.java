@@ -4,7 +4,6 @@ import gallows.model.DotaHeroes;
 import gallows.service.Service;
 import gallows.service.ServiceImpl;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -55,7 +54,8 @@ public class StartGame {
 
                 String a = scanner.next();
 
-                //Проверка, есть в слове буква, которрую ввел пользователь
+
+                //Проверка, есть в слове буква, которую ввел пользователь
                 if (service.checkTry(a, checkList)) {
 
                     //меня в скрытном слове "_" на букву пользователя
@@ -77,7 +77,16 @@ public class StartGame {
                         break;
                     }
                 } else {
-                    ++countUserWrongs;
+                    //проверка на запрещенные символы
+                    if (service.checkTry(a, dotaHeroes.forbiddenSymbols)) {
+                        System.err.println("\n\tITS Forbidden Symbols!!");
+                         continue;
+                    } else if(userWrongs.indexOf(a) != -1) {
+                        System.err.println("\n\tYou already entered it!!");
+                        continue;
+                    }else {
+                        ++countUserWrongs;
+                    }
 
                     //запись ошибочной буквы
                     service.addWrong(a, userWrongs);
@@ -89,7 +98,7 @@ public class StartGame {
             //Красивая победная надпись
             if (result == 0) {
                 service.badEnd();
-                System.out.println("It was: " + randomWord);
+                System.err.println("It was: " + randomWord);
             } else {
                 service.happyEnd();
             }
@@ -97,24 +106,25 @@ public class StartGame {
             System.out.println("Do you want to play again? (Again / N)");
             playAgain = scanner.next();
 
-             if(playAgain.equals("Again") || playAgain.equals("again")){
+            if (playAgain.equals("Again") || playAgain.equals("again")) {
                 countUserWrongs = 0;
                 countToWin = 0;
                 result = 0;
-                randomWord = service.getRandomName(dotaHeroes.manyNames);
+                randomWord = service.getRandomName(dotaHeroes.dotaHeroesNames);
                 countRandomWord = service.getRandomNameCount(randomWord);
                 countUserWrongs = 0;
                 userWrongs = new StringBuilder();
                 secretWord = service.createSecretWord(countRandomWord);
                 checkList = service.splitName(randomWord);
             } else {
-                 System.out.println("Goodbye Friend");
-                 break;
-             }
+                System.out.println("Goodbye Friend");
+                break;
+            }
         }
-        ///////Game END
     }
+    ///////Game END
 }
+
 
 
 
