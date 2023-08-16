@@ -7,7 +7,6 @@ import gallows.service.ServiceImpl;
 import java.util.List;
 
 public class SetupGame {
-
     DotaHeroes dotaHeroes = new DotaHeroes();
     Service serviceManager = new ServiceImpl();
 
@@ -19,8 +18,6 @@ public class SetupGame {
     5. —четчик колличества ошибок
     6. —четчик колличества правильных ответов
     7. —писок ошибочных букв
-
-
      */
 
      String randomHeroName = serviceManager.getRandomName(dotaHeroes.manyNames);

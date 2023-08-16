@@ -14,7 +14,6 @@ public class StartGame {
 
     public static void main(String[] args) {
 
-
         Service service = new ServiceImpl();
         SetupGame setupGame = new SetupGame();
         DotaHeroes dotaHeroes = new DotaHeroes();
@@ -27,7 +26,6 @@ public class StartGame {
         4. Стрингбилдер для ошибок (отображает неудачные попытки)
         5. secretWord скрытое слово "_ _ _ _ _ _"
         6.Лист, в котром буквы через запятую. Для проверки
-
          */
 
         String randomWord = setupGame.randomHeroName;
@@ -37,19 +35,18 @@ public class StartGame {
         List<String> secretWord = setupGame.secretWord;
         List<String> checkList = setupGame.checkList;
 
-
         //Basic field for StartGame
-
         int maxCountErros = 6;
         int result = 0;
-        int playAgain = 0;
-
+        String playAgain;
 
         //Console
         System.out.println("Hi man\nLets try");
 
-        while (true) {
 
+        ///////Game start
+
+        while (true) {
 
             while (countUserWrongs != maxCountErros) {
 
@@ -62,13 +59,17 @@ public class StartGame {
                 if (service.checkTry(a, checkList)) {
 
                     //меня в скрытном слове "_" на букву пользователя
-                    service.rewrite(secretWord, checkList, a);
+                    if (service.checkTry(a, secretWord)) {
+                        System.out.println("You already entered it");
+
+                    } else {
+                        service.rewrite(secretWord, checkList, a);
+                    }
 
                     System.out.println(" Wrong (" + countUserWrongs + "):" + userWrongs);
 
                     //Отрисовка висилицы
                     service.drawGallows(countUserWrongs);
-
 
                     if (countToWin == countRandomWord) {
                         ++result;
@@ -93,15 +94,12 @@ public class StartGame {
                 service.happyEnd();
             }
 
+            System.out.println("Do you want to play again? (Again / N)");
+            playAgain = scanner.next();
 
-            System.out.println("Do you want to play again? (1/2)");
-            playAgain = scanner.nextInt();
-
-            if (playAgain == 2) {
-                System.out.println("Goodbye!");
-                break; // Выход из бесконечного цикла
-            } else {
+             if(playAgain.equals("Again") || playAgain.equals("again")){
                 countUserWrongs = 0;
+                countToWin = 0;
                 result = 0;
                 randomWord = service.getRandomName(dotaHeroes.manyNames);
                 countRandomWord = service.getRandomNameCount(randomWord);
@@ -109,10 +107,12 @@ public class StartGame {
                 userWrongs = new StringBuilder();
                 secretWord = service.createSecretWord(countRandomWord);
                 checkList = service.splitName(randomWord);
-
-            }
-
+            } else {
+                 System.out.println("Goodbye Friend");
+                 break;
+             }
         }
+        ///////Game END
     }
 }
 

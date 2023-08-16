@@ -1,7 +1,8 @@
 
 
+16/08 = END
+It was very COOL
 
 
-14.08.2023 start  = 1.5
-45 min
-45 min
+
+14.08.2023 start

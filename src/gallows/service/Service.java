@@ -22,11 +22,4 @@ public interface Service {
      String getRandomName(List<String> list);
 
      StringBuilder addWrong(String userChar, StringBuilder list);
-
-
-
-
-
-
-
 }

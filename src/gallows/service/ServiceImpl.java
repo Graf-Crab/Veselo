@@ -47,7 +47,6 @@ public class ServiceImpl implements Service {
         }
     }
 
-    //append
     public StringBuilder addWrong(String userChar, StringBuilder list){
         list.append(userChar);
         list.append(", ");
