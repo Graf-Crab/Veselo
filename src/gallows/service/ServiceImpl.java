@@ -43,14 +43,14 @@ public class ServiceImpl implements Service {
         if (list.contains(userChar)) {
             return true;
         } else {
-
             return false;
         }
     }
 
     //append
-    public List<String> addWrong(String userChar, List<String> list){
-        list.add(userChar);
+    public StringBuilder addWrong(String userChar, StringBuilder list){
+        list.append(userChar);
+        list.append(", ");
         return list;
     }
 
@@ -81,20 +81,7 @@ public class ServiceImpl implements Service {
     @Override
     public void drawGallows(int number) {
 
-        //1%
-         double progressBar = (double)100 / 9;
-
-
-        double progressWrong = progressBar * (double) number;
-
-        if (progressWrong <=  13.0){
-                System.out.println(" ----------");
-                System.out.println(" |        |");
-                System.out.println(" |        ");
-                System.out.println(" |        ");
-                System.out.println(" |        ");
-                System.out.println("_|_       ");
-        } else if (progressWrong <=  26.0) {
+        if (number <=  1) {
             System.out.println(" ----------");
             System.out.println(" |        |");
             System.out.println(" |        0");
@@ -102,7 +89,7 @@ public class ServiceImpl implements Service {
             System.out.println(" |        ");
             System.out.println("_|_       ");
             
-        } else if (progressWrong <=  39.0) {
+        } else if (number <=  2) {
             System.out.println(" ----------");
             System.out.println(" |        |");
             System.out.println(" |        0");
@@ -110,14 +97,14 @@ public class ServiceImpl implements Service {
             System.out.println(" |        ");
             System.out.println("_|_       ");
 
-        } else if (progressWrong <=  52.0) {
+        } else if (number <=  3) {
             System.out.println(" ----------");
             System.out.println(" |        |");
             System.out.println(" |        0");
             System.out.println(" |       \\|");
             System.out.println(" |        ");
             System.out.println("_|_       ");
-        }else if (progressWrong <=  65.0) {
+        }else if (number <=  4) {
             System.out.println(" ----------");
             System.out.println(" |        |");
             System.out.println(" |        0");
@@ -125,7 +112,7 @@ public class ServiceImpl implements Service {
             System.out.println(" |        ");
             System.out.println("_|_       ");
         }
-        else if (progressWrong <=  78.0) {
+        else if (number <=  5) {
             System.out.println(" ----------");
             System.out.println(" |        |");
             System.out.println(" |        0");
@@ -133,7 +120,7 @@ public class ServiceImpl implements Service {
             System.out.println(" |       /");
             System.out.println("_|_       ");
         }
-        else if (progressWrong <=  92.0) {
+        else if (number ==  6) {
             System.out.println(" ----------");
             System.out.println(" |        |");
             System.out.println(" |      |0_0|.....HeeeeeeT!!");

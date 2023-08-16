@@ -28,7 +28,7 @@ public class SetupGame {
      List<String> secretWord = serviceManager.createSecretWord(randomHeroNameCount);
      List<String> checkList = serviceManager.splitName(randomHeroName);
 
-     int countWrong;
-     int correctAnswer;
+    int countWrong = 0;
+
      StringBuilder wrongs = new StringBuilder();
 }

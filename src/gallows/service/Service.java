@@ -21,7 +21,7 @@ public interface Service {
 
      String getRandomName(List<String> list);
 
-     List<String> addWrong(String userChar, List<String> list);
+     StringBuilder addWrong(String userChar, StringBuilder list);
 
 
 
