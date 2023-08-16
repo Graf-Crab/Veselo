@@ -9,7 +9,6 @@ import java.util.Scanner;
 
 public class GameProcess {
 
-
     Service service = new ServiceImpl();
     SetupGame setupGame = new SetupGame();
     DotaHeroes dotaHeroes = new DotaHeroes();
@@ -27,7 +26,6 @@ public class GameProcess {
     int maxCountErros = 6;
     int result = 0;
     String playAgain;
-
 
     public void gameStart() {
         while (true) {
