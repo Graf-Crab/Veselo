@@ -1,16 +1,13 @@
 package gallows.service;
 
-
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-import static gallows.main.StartGame.*;
+import static gallows.main.GameProcess.*;
 
 public class ServiceImpl implements Service {
-
     Random random = new Random();
 
     @Override
@@ -44,7 +41,7 @@ public class ServiceImpl implements Service {
         }
     }
 
-    public StringBuilder addWrong(String userChar, StringBuilder list){
+    public StringBuilder addWrong(String userChar, StringBuilder list) {
         list.append(userChar);
         list.append(", ");
         return list;
@@ -77,15 +74,15 @@ public class ServiceImpl implements Service {
     @Override
     public void drawGallows(int number) {
 
-        if (number <=  1) {
+        if (number <= 1) {
             System.out.println(" ----------");
             System.out.println(" |        |");
             System.out.println(" |        0");
             System.out.println(" |        ");
             System.out.println(" |        ");
             System.out.println("_|_       ");
-            
-        } else if (number <=  2) {
+
+        } else if (number <= 2) {
             System.out.println(" ----------");
             System.out.println(" |        |");
             System.out.println(" |        0");
@@ -93,30 +90,28 @@ public class ServiceImpl implements Service {
             System.out.println(" |        ");
             System.out.println("_|_       ");
 
-        } else if (number <=  3) {
+        } else if (number <= 3) {
             System.out.println(" ----------");
             System.out.println(" |        |");
             System.out.println(" |        0");
             System.out.println(" |       \\|");
             System.out.println(" |        ");
             System.out.println("_|_       ");
-        }else if (number <=  4) {
+        } else if (number <= 4) {
             System.out.println(" ----------");
             System.out.println(" |        |");
             System.out.println(" |        0");
             System.out.println(" |       \\|/");
             System.out.println(" |        ");
             System.out.println("_|_       ");
-        }
-        else if (number <=  5) {
+        } else if (number <= 5) {
             System.out.println(" ----------");
             System.out.println(" |        |");
             System.out.println(" |        0");
             System.out.println(" |       \\|/");
             System.out.println(" |       /");
             System.out.println("_|_       ");
-        }
-        else if (number ==  6) {
+        } else if (number == 6) {
             System.out.println(" ----------");
             System.out.println(" |        |");
             System.out.println(" |      |0_0|.....HeeeeeeT!!");

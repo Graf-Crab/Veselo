@@ -4,22 +4,23 @@ import java.util.List;
 
 public interface Service {
 
-     int getRandomNameCount(String word);
+    int getRandomNameCount(String word);
 
-     List<String> createSecretWord(int count);
+    List<String> createSecretWord(int count);
 
-     List splitName(String word);
+    List splitName(String word);
 
-     boolean checkTry(String userChar, List<String> list);
+    boolean checkTry(String userChar, List<String> list);
 
-     List<String> rewrite(List<String> list1, List<String> list, String str);
+    List<String> rewrite(List<String> list1, List<String> list, String str);
 
-     void happyEnd();
-     void badEnd();
+    void happyEnd();
 
-     void drawGallows(int number);
+    void badEnd();
 
-     String getRandomName(List<String> list);
+    void drawGallows(int number);
 
-     StringBuilder addWrong(String userChar, StringBuilder list);
+    String getRandomName(List<String> list);
+
+    StringBuilder addWrong(String userChar, StringBuilder list);
 }
