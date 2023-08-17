@@ -9,23 +9,23 @@ import java.util.Scanner;
 
 public class GameProcess {
 
-    Service service = new ServiceImpl();
-    SetupGame setupGame = new SetupGame();
-    DotaHeroes dotaHeroes = new DotaHeroes();
-    Scanner scanner = new Scanner(System.in);
+    private Service service = new ServiceImpl();
+    private SetupGame setupGame = new SetupGame();
+    private DotaHeroes dotaHeroes = new DotaHeroes();
+    private Scanner scanner = new Scanner(System.in);
 
     public static int countToWin = 0;
-    String randomWord = setupGame.randomHeroName;
-    int countRandomWord = setupGame.randomHeroNameCount;
-    int countUserWrongs = setupGame.countWrong;
-    StringBuilder userWrongs = setupGame.wrongs;
-    List<String> secretWord = setupGame.secretWord;
-    List<String> checkList = setupGame.checkList;
+    private String randomWord = setupGame.randomHeroName;
+    private int countRandomWord = setupGame.randomHeroNameCount;
+    private int countUserWrongs = setupGame.countWrong;
+    private StringBuilder userWrongs = setupGame.wrongs;
+    private List<String> secretWord = setupGame.secretWord;
+    private List<String> checkList = setupGame.checkList;
 
     //Basic field for StartGame
-    int maxCountErros = 6;
-    int result = 0;
-    String playAgain;
+    private int maxCountErros = 6;
+    private int result = 0;
+    private String playAgain;
 
     public void gameStart() {
         while (true) {

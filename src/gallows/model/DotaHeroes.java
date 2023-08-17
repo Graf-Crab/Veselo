@@ -6,7 +6,7 @@ import java.util.List;
 
 public class DotaHeroes {
 
-     public List<String> dotaHeroesNames = new ArrayList<>(Arrays.asList("Anti-Mage", "Axe", "Bane", "Bloodseeker", "",
+     public List<String> dotaHeroesNames = new ArrayList<>(Arrays.asList("Axe", "Bane", "Bloodseeker", "",
              "", "Earthshaker", "Juggernaut", "Mirana", "Morphling", "Puck", "Pudge", "Razor", "Sven", "Tiny",
              "Windranger", "Zeus", "Kunkka", "Lina", "Lion", "Slardar", "Tidehunter", "Lich", "Riki", "Enigma", "Tinker",
              "Sniper", "Necrophos", "Warlock", "Beastmaster", "Venomancer", "Void", "Pugna", "Viper", "Luna",
